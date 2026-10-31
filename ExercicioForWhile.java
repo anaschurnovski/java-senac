@@ -6,6 +6,7 @@ public class ExercicioForWhile {
         Scanner leitor = new Scanner(System.in);
 
         System.out.println("""
+                           
                 === EXERCÍCIOS ===
                 
                 1 - Contador
