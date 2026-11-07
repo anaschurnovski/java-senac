@@ -5,8 +5,7 @@ public class ExercicioForWhile {
 
         Scanner leitor = new Scanner(System.in);
 
-        System.out.println("""
-                           
+        System.out.print("""
                 === EXERCÍCIOS ===
                 
                 1 - Contador
@@ -16,6 +15,8 @@ public class ExercicioForWhile {
                 5- Validar senha
                 6- Calculadora
                 7- Tabuada
+                8 - Soma Pares
+                9 - Média Notas
                 
                 Digite o número do exercício:
                 """);
@@ -31,6 +32,8 @@ public class ExercicioForWhile {
             case 5 -> validarLogin();
             case 6 -> calculadora();
             case 7 -> tabuada();
+            case 8 -> somaPares();
+            case 9 -> mediaNotas();
 
             default -> System.out.println("Opção inválida");
         }
@@ -191,5 +194,48 @@ public class ExercicioForWhile {
 
     static void somaPares() {
 
+        int soma = 0;
+
+        for (int i = 1; i <= 100; i++) {
+            soma += i;
+        }
+
+        System.out.printf("1) A soma de todos os números de 1 a 100 é: %d%n", soma);
+
+        System.out.print("2) Números pares de 1 a 50: ");
+
+        for (int i = 1; i <= 50; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+
+        System.out.println();
     }
+
+    static void mediaNotas() {
+
+        Scanner leitor = new Scanner(System.in);
+
+
+        System.out.print("Quantas notas você quer digitar? ");
+        int quantidade = leitor.nextInt();
+
+        double soma = 0;
+
+        for (int i = 1; i <= quantidade; i++) {
+            System.out.printf("Digite a %dª nota: ", i);
+
+            double nota = leitor.nextDouble();
+            soma += nota;
+        }
+
+        double media = soma / quantidade;
+
+        System.out.printf("%nA média das %d notas digitadas é: %.2f%n", quantidade, media);
+
+        leitor.close();
+    }
+
 }
+
